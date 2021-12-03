@@ -1,12 +1,11 @@
+# prevent double warp
 tag @s add warped
-
-#create a spawn "platform" :)
-execute at @s run setblock 0 66 0 minecraft:air
-execute at @s run setblock 0 65 0 minecraft:air
-execute at @s run setblock 0 64 0 minecraft:bedrock
 
 # initiate warp
 execute in minecraft:the_nether run teleport @s 0 65 0
+
+# create spawn platform
+schedule function dimension_warp:platform 1s
 
 # temp fire res and and resistance incase unlucky
 effect give @s minecraft:fire_resistance 60 0 true
